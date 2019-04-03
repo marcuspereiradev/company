@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import About from './components/About';
@@ -9,13 +10,14 @@ import Footer from './components/Footer';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <About />
-        <Services />
-        <Site />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Route path='/' exact component={ About } />
+          <Route path='/services' component={ Services } />
+          <Footer />
+        </div>
+      </BrowserRouter>
     );
   }
 }
