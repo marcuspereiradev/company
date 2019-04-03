@@ -4,8 +4,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/Header';
 import About from './components/About';
 import Services from './components/Services';
-import Site from './Site';
 import Portfolio from './components/Portfolio';
+import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
 class App extends Component {
@@ -17,6 +17,7 @@ class App extends Component {
           <Route path='/' exact component={ About } />
           <Route path='/services' component={ Services } />
           <Route path='/portfolio' component={ Portfolio } />
+          <Route path='/pricing' component={ Pricing } />
           <Footer />
         </div>
       </BrowserRouter>
