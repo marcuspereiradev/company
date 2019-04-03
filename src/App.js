@@ -6,6 +6,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path='/services' component={ Services } />
           <Route path='/portfolio' component={ Portfolio } />
           <Route path='/pricing' component={ Pricing } />
+          <Route path='/contact' component={ Contact } />
           <Footer />
         </div>
       </BrowserRouter>
