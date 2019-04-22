@@ -10,11 +10,10 @@ class Admin extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h2>Painel Administrativo</h2>
         <Route path={'/'} component={AdminMenu} />
         <Route path={`${this.props.match.url}/portfolio`} component={AdminPortfolio}/>
-        <p>{JSON.stringify(this.props)}</p>
       </div>
     )
   }
