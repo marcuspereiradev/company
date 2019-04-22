@@ -7,11 +7,14 @@ class Portfolio extends Component {
     super(props);
 
     this.state = {
-      portfolio: {
-        title: 'Nova Iguaçu',
-        description: 'Terra linda e encantadora'
-      }
+      portfolio: {}
     }
+
+    config.syncState('portfolio', {
+      context: this,
+      state: 'portfolio',
+      asArray: false,
+    })
   }
 
   render() {
