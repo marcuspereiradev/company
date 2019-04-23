@@ -9,26 +9,18 @@ class AdminPortfolio extends Component {
 
   recordPortfolio(event) {
     event.preventDefault();
-    console.log('To aqui !!!!!!!!!!!!!');
-    console.log(this.title.value);
-    console.log(this.description.value);
-    console.log(this.image.value);
-
     const file = this.image.files[0];
     const { name, size, type } = file;
-    
-    console.log(name, size, type);
     
     const ref = storage.ref(name);
     ref.put(file).then(img => {
       img.ref.getDownloadURL().then(downloadURL => {
-        // console.log(downloadURL);
         const newPortfolio = {
           title: this.title.value,
           description: this.description.value,
           image: downloadURL,
         }
-        console.log(newPortfolio);
+        config.push('portfolio', { data: newPortfolio})
       })
     })
   }
