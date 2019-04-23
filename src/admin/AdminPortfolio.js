@@ -7,7 +7,8 @@ class AdminPortfolio extends Component {
     this.recordPortfolio = this.recordPortfolio.bind(this);
   }
 
-  recordPortfolio() {
+  recordPortfolio(event) {
+    event.preventDefault();
     console.log('To aqui !!!!!!!!!!!!!');
   }
 
