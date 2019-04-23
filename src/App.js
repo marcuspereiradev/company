@@ -8,6 +8,7 @@ import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Admin from './admin/Admin';
+import Login from './admin/Login';
 import Footer from './components/Footer';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route path='/pricing' component={ Pricing } />
           <Route path='/contact' component={ Contact } />
           <Route path='/admin' component={ Admin } />
+          <Route path='/login' component={ Login } />
           <Footer />
         </div>
       </BrowserRouter>
