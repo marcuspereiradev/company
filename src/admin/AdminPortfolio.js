@@ -3,14 +3,18 @@ import config, { storage } from './../firebase-config';
 
 class AdminPortfolio extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+  }
+
+  recordPortfolio() {
+    console.log('To aqui !!!!!!!!!!!!!');
   }
 
   render() {
     return (
       <div>
         <h2>Portfolio - Area administrativa</h2>
-        <form>
+        <form onSubmit={this.recordPortfolio}>
           <div className="form-group">
             <label htmlFor="title">Title</label>
             <input type="text" className="form-control" id="title" placeholder="Title" />
