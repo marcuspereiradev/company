@@ -10,6 +10,21 @@ class AdminPortfolio extends Component {
   recordPortfolio(event) {
     event.preventDefault();
     console.log('To aqui !!!!!!!!!!!!!');
+    console.log(this.title.value);
+    console.log(this.description.value);
+    console.log(this.image.value);
+
+    const file = this.image.files[0];
+    const { name, size, type } = file;
+    
+    console.log(name, size, type);
+    
+    const ref = storage.ref(name);
+    ref.put(file).then(img => {
+      img.ref.getDownloadURL().then(downloadURL => {
+        console.log(downloadURL);
+      })
+    })
   }
 
   render() {
@@ -19,15 +34,15 @@ class AdminPortfolio extends Component {
         <form onSubmit={this.recordPortfolio}>
           <div className="form-group">
             <label htmlFor="title">Title</label>
-            <input type="text" className="form-control" id="title" placeholder="Title" />
+            <input type="text" className="form-control" id="title" placeholder="Title" ref={(ref) => this.title = ref} />
           </div>
           <div className="form-group">
             <label htmlFor="description">Description</label>
-            <textarea className="form-control" id="description" rows="3"></textarea>
+            <textarea className="form-control" id="description" rows="3" ref={(ref) => this.description = ref}></textarea>
           </div>
           <div className="form-group">
             <label htmlFor="image">Image File</label>
-            <input type="file" className="form-control-file" id="image" />
+            <input type="file" className="form-control-file" id="image" ref={(ref) => this.image = ref} />
           </div>
           <button type="submit" className="btn btn-primary">Save</button>
         </form>
