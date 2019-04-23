@@ -4,6 +4,7 @@ import config, { storage } from './../firebase-config';
 class AdminPortfolio extends Component {
   constructor(props) {
     super(props);
+    this.recordPortfolio = this.recordPortfolio.bind(this);
   }
 
   recordPortfolio() {
