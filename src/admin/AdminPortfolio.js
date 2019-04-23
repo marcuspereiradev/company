@@ -22,7 +22,13 @@ class AdminPortfolio extends Component {
     const ref = storage.ref(name);
     ref.put(file).then(img => {
       img.ref.getDownloadURL().then(downloadURL => {
-        console.log(downloadURL);
+        // console.log(downloadURL);
+        const newPortfolio = {
+          title: this.title.value,
+          description: this.description.value,
+          image: downloadURL,
+        }
+        console.log(newPortfolio);
       })
     })
   }
