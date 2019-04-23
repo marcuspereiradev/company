@@ -22,9 +22,9 @@ class AdminPortfolio extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="description">Description</label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
+            <textarea className="form-control" id="description" rows="3"></textarea>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label htmlFor="image">Image File</label>
             <input type="file" className="form-control-file" id="image" />
           </div>
