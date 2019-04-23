@@ -12,16 +12,16 @@ class AdminPortfolio extends Component {
         <h2>Portfolio - Area administrativa</h2>
         <form>
           <div className="form-group">
-            <label for="title">Title</label>
+            <label htmlFor="title">Title</label>
             <input type="text" className="form-control" id="title" placeholder="Title" />
           </div>
           <div className="form-group">
-            <label for="description">Description</label>
+            <label htmlFor="description">Description</label>
             <textarea class="form-control" id="description" rows="3"></textarea>
           </div>
           <div class="form-group">
-            <label for="image">Image File</label>
-            <input type="file" class="form-control-file" id="image" />
+            <label htmlFor="image">Image File</label>
+            <input type="file" className="form-control-file" id="image" />
           </div>
           <button type="submit" className="btn btn-primary">Save</button>
         </form>
