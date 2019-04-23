@@ -3,6 +3,16 @@ import React, { Component } from 'react';
 class Login extends Component {
   constructor(props) {
     super(props);
+
+    this.email = null;
+    this.password = null;
+
+    this.authenticUser = this.authenticUser.bind(this);
+  }
+
+  authenticUser() {
+    console.log(this.email.value);
+    console.log(this.password.value);
   }
 
   render() {
@@ -18,7 +28,7 @@ class Login extends Component {
             <label htmlFor="password">Password</label>
             <input type="password" name="password" ref={(ref) => this.password = ref} className="form-control" id="password" placeholder="Password" />
           </div>
-          <button type="button" onclik={this.authenticUser} className="btn btn-primary">Access</button>
+          <button type="button" onClick={this.authenticUser} className="btn btn-primary">Access</button>
       </div>
     )
   }
