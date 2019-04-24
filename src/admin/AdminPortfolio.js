@@ -22,7 +22,7 @@ class AdminPortfolio extends Component {
     this.setState({ isRecording: true });
     event.preventDefault();
     const file = ItemsPortfolio.image.files[0];
-    const { name, size, type } = file;
+    const { name } = file;
     
     const ref = storage.ref(name);
     ref.put(file).then(img => {

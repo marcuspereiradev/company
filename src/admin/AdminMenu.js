@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const AdminMenu = props => {
   return (
     <div className="list-group">
-      <a href="#" className="list-group-item list-group-item-action active">
+      <Link to="#" className="list-group-item list-group-item-action active">
         Select an option
-      </a>
+      </Link>
       <Link to='/admin/portfolio' className="list-group-item list-group-item-action">Portfolio</Link>
       {/* <a href="#" className="list-group-item list-group-item-action">Morbi leo risus</a>
       <a href="#" className="list-group-item list-group-item-action">Porta ac consectetur ac</a>
