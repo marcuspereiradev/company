@@ -4,28 +4,48 @@ import config, { storage } from './../firebase-config';
 class AdminPortfolio extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isRecording: false
+    }
+
     this.recordPortfolio = this.recordPortfolio.bind(this);
   }
 
   recordPortfolio(event) {
+    const ItemsPortfolio = {
+      title: this.title.value,
+      description: this.description.value,
+      image: this.image,
+    }
+
+    this.setState({ isRecording: true });
     event.preventDefault();
-    const file = this.image.files[0];
+    const file = ItemsPortfolio.image.files[0];
     const { name, size, type } = file;
     
     const ref = storage.ref(name);
     ref.put(file).then(img => {
       img.ref.getDownloadURL().then(downloadURL => {
         const newPortfolio = {
-          title: this.title.value,
-          description: this.description.value,
+          title: ItemsPortfolio.title,
+          description: ItemsPortfolio.description,
           image: downloadURL,
         }
         config.push('portfolio', { data: newPortfolio})
       })
+      this.setState({ isRecording: false });
     })
   }
 
   render() {
+    if (this.state.isRecording) {
+      return (
+        <div className="container">
+          <h2><span className="glyphicon glyphicon-refresh"></span>Wait...</h2>
+        </div>
+      )
+    }
     return (
       <div>
         <h2>Portfolio - Area administrativa</h2>
