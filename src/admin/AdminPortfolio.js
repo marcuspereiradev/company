@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import config, { storage } from './../firebase-config';
+import AdminPortfolioDelete from './AdminPortfolioDelete';
 
 class AdminPortfolio extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isRecording: false
+      isRecording: false,
     }
 
     this.recordPortfolio = this.recordPortfolio.bind(this);
@@ -64,6 +65,11 @@ class AdminPortfolio extends Component {
           </div>
           <button type="submit" className="btn btn-primary">Save</button>
         </form>
+
+        <h3>Excluding fields</h3>
+        <div className='row text-center'>
+          <AdminPortfolioDelete />
+        </div><br/>
       </div>
     )
   }
